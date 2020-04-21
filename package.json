@@ -1,0 +1,33 @@
+{
+  "name": "paper-story",
+  "version": "0.1.0",
+  "description": "A simple layout with paper effects",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run clean && parcel public/index.html --out-dir development -p 3000",
+    "build": "parcel build public/index.html --out-dir dist --public-url ./",
+    "clean": "rimraf ./development && rimraf -rf ./.cache"
+  },
+  "keywords": [
+    "parcel",
+    "leaflet"
+  ],
+  "author": "dc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dillonchaffey/paper-story"
+  },
+  "homepage": "https://github.com/dillonchaffey/leaflet-paper-story#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/runtime-corejs2": "^7.9.2",
+    "parcel-bundler": "^1.12.4",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.3"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "leaflet": "^1.6.0"
+  }
+}

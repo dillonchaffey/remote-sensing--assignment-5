@@ -1,0 +1,147 @@
+@import 'card';
+
+
+@font-face {
+  font-family: 'Traveling _Typewriter';
+  src: url('TravelingTypewriter.woff2') format('woff2'),
+  url('TravelingTypewriter.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*div[class^="wired"] {*/
+html * {
+  font-family: "Traveling _Typewriter";
+}
+
+
+//$primary-color: midnightblue;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  //box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.9);
+  background: linear-gradient(90deg, rgba(85, 85, 85, 1) 0%, rgba(208, 208, 208, 1) 50%, rgba(85, 85, 85, 1) 100%);
+  line-height: 1.5;
+}
+
+header a, footer a {
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 5%;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  //border-bottom: 5px #fff solid;
+}
+
+footer {
+  text-align: center;
+  margin-top: 5%;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  //border-bottom: 5px #fff solid;
+}
+
+.map-container {
+  height: 280px;
+  width: 100%;
+  border: 1px solid red;
+  margin-bottom: 2%;
+}
+
+article {
+  display: grid;
+  grid-template-columns: [full-start] minmax(1em, 1fr) [main-start] minmax(0, 56em) [main-end] minmax(1em, 1fr) [full-end];
+  grid-gap: 1em;
+}
+
+section {
+  grid-column: main;
+}
+
+figure {
+  grid-column: full;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+video {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+section h1 {
+  margin-top: 2.5%;
+  margin-bottom: .5%;
+}
+
+
+/** PAPER EFFECT **/
+.paper-box {
+  background: #fafafa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 300px 25px rgba(222, 198, 122, 0.7) inset;
+  padding: 24px;
+  position: relative;
+}
+
+.paper-box:before, .paper-box:after {
+  content: "";
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), inset 0 0 300px rgba(222, 198, 122, 0.7);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -2;
+  transition: .5s;
+}
+
+.paper-box:before {
+  left: -5px;
+  top: 2px;
+  transform: rotate(-.8deg);
+}
+
+.paper-box:after {
+  right: -3px;
+  top: 0px;
+  transform: rotate(1.2deg);
+}
+
+.paper-box:hover:before {
+  transform: rotate(0deg);
+  border: solid rgba(111, 99, 61, 0.4);
+  border-width: 0px 0px 0px 1px;
+  left: -6px;
+  top: -6px;
+}
+
+.paper-box:hover:after {
+  transform: rotate(0deg);
+  border: solid rgba(111, 99, 61, 0.4);
+  border-width: 0px 0px 0px 1px;
+  right: 3px;
+  top: -3px;
+}
+

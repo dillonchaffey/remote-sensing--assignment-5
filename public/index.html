@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Remote Sensing Assignment 5</title>
+</head>
+<body>
+<div class="container">
+    <div id="header"></div>
+    <!--    <div id="user"></div>-->
+
+    <article>
+
+        <section>
+            <div class="paper-box">
+                <div id="map-clearcut" class="map-container"></div>
+                <wired-checkbox id="cc-toggle-check" data-layer="polyGeoJson" checked>Clearcut Polygon</wired-checkbox>
+
+                <h1>Part 1 – Clearcut Visualization</h1>
+                <p>
+                    In this exercise areas which were one through four meter above sea level were highlighted to
+                    visualize flooding. Building footprints were extruded to their average height as well to show the
+                    impact of the flooding upon them.
+                    After the data was downloaded for the study area the DEM rasters were merged in ArcPro. The DEM was
+                    then run through the Con tool to create 4 flood rasters, each containing an area that was 1,2,3, and
+                    4 meters above sea level.
+                    The next step was to extrude the building footprints. The open street map building data had the
+                    footprints of the buildings in the area. These building footprints were extruded to the average
+                    height of the building footprint area taken from the CHM.
+                    The scene was then set changed to a 3D local scene, the four flood interval rasters were then
+                    overlaid with the buildings, exported to images and then compiled into the animated GIF you see
+                    here. Crossfading between the rasters was done to give a smoother flood like visualization.
+                    Data sources: Open Street Map (Buildings), Nova Scotia Elevation Explorer (DEM), Sentinel Satellite
+                    Imagery (Terrain overlay
+                </p>
+
+                <img src="../src/img/cc_map_nofill.jpg">
+                <img src="../src/img/cc_map_fill.jpg">
+                <p>
+                    Data sources: Nova Scotia Elevation Explorer (DEM, DSM), ESRI Satellite Imagery (Basemap)
+                </p>
+            </div>
+        </section>
+
+        <figure></figure>
+
+        <section>
+            <div class="paper-box">
+                <div id="map-pictou" class="map-container"></div>
+
+                <h1>Part 2: Flood Visualization</h1>
+                <p>
+                    In this exercise areas which were one through four meter above sea level were highlighted to
+                    visualize flooding. Building footprints were extruded to their average height as well to show the
+                    impact of the flooding upon them.
+                    After the data was downloaded for the study area the DEM rasters were merged in ArcPro. The DEM was
+                    then run through the Con tool to create 4 flood rasters, each containing an area that was 1,2,3, and
+                    4 meters above sea level.
+                    The next step was to extrude the building footprints. The open street map building data had the
+                    footprints of the buildings in the area. These building footprints were extruded to the average
+                    height of the building footprint area taken from the CHM.
+                    The scene was then set changed to a 3D local scene, the four flood interval rasters were then
+                    overlaid with the buildings, exported to images and then compiled into the animated GIF you see
+                    here. Crossfading between the rasters was done to give a smoother flood like visualization.
+                </p>
+                <img src="../src/img/water_slides_wa_s_c2.gif"/>
+                <p>
+                    Data sources: Open Street Map (Buildings), Nova Scotia Elevation Explorer (DEM), Sentinel Satellite
+                    Imagery (Terrain overlay)
+                </p>
+            </div>
+        </section>
+
+        <figure></figure>
+
+        <section>
+            <div class="paper-box">
+                <h1>Part 3: Wind Farm Visualization</h1>
+                <p>
+                    In this part a wind farm was visualized in Cheticamp, Nova Scotia. Cheticamp is infamous for its
+                    high wind speeds and the weather station there has recorded wind speeds of over 200 km/hour on
+                    several occasions. The area is also one of the most populated in northern Cape Breton. All in all it
+                    is an ideal site for a wind farm.
+                    To create this visualization the DEM was added and used as the elevation source for the 3D scene.
+                    The 3D wind turbine models were then added to the map and set to the proper height and width
+                    dimensions. Once the terrain and models were set up in a 3D scene a series of key frames were added
+                    that were smoothly transitioned by ArcPro’s map tool. The exported video can be seen below.
+                </p>
+
+                <video width="100%" height="320" controls="controls">
+                    <source src="../src/img/Map_3D.mp4">
+                </video>
+
+                <p>
+                    Data sources: Nova Scotia Elevation Explorer (DEM), clara.io (Wind Turbine model), ESRI (basemap)
+                </p>
+            </div>
+        </section>
+
+        <figure></figure>
+
+        <section>
+            <div class="paper-box">
+                <h1>Part 4: Atlantic Memory Park Historic Photo Visualization</h1>
+                <p>
+                    In this example a park was rendered in the browser using threejs. The elevation data was downloaded
+                    from the Nova Scotia Elevation Explorer website and then the sequential tiles for the study area
+                    were merged with the Mosaic to New Raster tool. The park concept art was then imported and
+                    georeferenced to position it correctly. The merged DEM and the georeferenced park image were then
+                    added in QGIS and exported as a 3D scene using the qgis2threejs plugin. The vertical exaggeration
+                    was set to 1.5 to more effectively visualize the terrain. The exported 3D render can be viewed in
+                    the browser by clicking the link below.
+                </p>
+                <a href="https://dillonc.me/park-visualization/">
+                    <img src="../src/img/park_thumb.jpg" />
+                    Link
+                    <br>
+                    <br>
+                </a>
+
+                <p>
+                    Data sources: Nova Scotia Elevation Explorer (DEM), Dillon Consulting (Park Concept Drawing)
+                </p>
+            </div>
+        </section>
+    </article>
+    <figure></figure>
+
+    <footer>
+
+        Produced as part of the Geographic Sciences program at
+        <a href="https://www.nscc.ca/explorenscc/campuses/cogs/">
+            NSCC COGS
+        </a>
+
+
+    </footer>
+
+</div>
+
+<!--<script-->
+<!--        src="https://code.jquery.com/jquery-3.5.0.min.js"-->
+<!--        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="-->
+<!--        crossorigin="anonymous"></script>-->
+
+<script src="https://unpkg.com/wired-elements"></script>
+
+<script src="../src/img/cc_poly.js"></script>
+
+<script src="../src/app.js"></script>
+</body>
+</html>
